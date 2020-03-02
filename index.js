@@ -15,7 +15,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-        user : true
+        user : null
     };
     this.login = this.login.bind(this);
   }
@@ -25,7 +25,7 @@ class App extends Component {
 
   login(name, password){
     
-    if(name && name === password){
+    if(name &&  password){
       this.setState({user: name});
     }
   }
