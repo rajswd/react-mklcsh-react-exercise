@@ -9,7 +9,7 @@ const NewPersonComponent = (props)=>{
      let employee = {
                   name: "RAJ_ " + counter,
                   id: Date.now(),
-                  contact: "1234321",
+                  contact: Date.now(),
                   emailId: "raj@raj.com" 
                 };    
 
@@ -18,9 +18,9 @@ const NewPersonComponent = (props)=>{
   }
 
   return (
-    <div>
+    <h1>
       <button onClick={addEmployee}> ADD Employee</button>
-    </div>
+    </h1>
   );
 }
 

@@ -1,22 +1,35 @@
 import React from 'react';
+
 import { connect } from "react-redux";
 import * as CONST from '../../store/constant';
+import './home.css';
  
 const HomeComponent = (props)=>{
   return (
     <div>
-      <h1> HomeComponent </h1>
+      <h1> Employee List </h1>
       
-       <ul>
+       <table >
+        <thead>
+          <tr> 
+              <td>Name</td>
+              <td>Contact</td>
+              <td>Email</td>
+              <td>Action</td>
+
+          </tr>
+          </thead>
+          <tbody>
         {props.employeeList.map(el => (
-          <li key={el.id}> 
-            <td >{el.name} ({el.id})</td> 
+          <tr key={el.id}> 
+            <td >{el.name}</td> 
             <td  style={{width:'120px'}} >{el.contact}</td> 
             <td  style={{width:'120px'}}>{el.emailId}</td> 
-            <td  style={{width:'30px'}} onClick={props.deleteEmployee.bind(null,el.id)} >Delete</td> 
-          </li>
+            <td  className="delete-row" style={{width:'30px'}} onClick={props.deleteEmployee.bind(null,el.id)} >Delete</td> 
+          </tr>
         ))}
-      </ul>
+        </tbody>
+      </table>
     </div>
     );
 }
