@@ -4,6 +4,10 @@ import {BrowserRouter} from 'react-router-dom';
  
 import RouterComponent from './component/navBar/navBar';
 import LoginComponent from './login/login';
+import {createStore } from 'redux';
+import {Provider} from 'react-redux';
+
+import reducerAction from './store/reducer/reducerAction';
 
 import './style.css';
 
@@ -11,7 +15,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-        user : null
+        user : true
     };
     this.login = this.login.bind(this);
   }
@@ -38,5 +42,14 @@ class App extends Component {
     );
   }
 }
+const initialState = {
+  employeeList: []
+};
+const store1 = createStore(reducerAction);
+// console.log("-------",store1.getState());
 
-render(<App />, document.getElementById('root'));
+render(<Provider store={store1}><App /></Provider>, document.getElementById('root'));
+
+export default App;
+
+

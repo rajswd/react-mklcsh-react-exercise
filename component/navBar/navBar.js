@@ -16,8 +16,9 @@ const RouterComponent = (props) =>{
         <ul>
           <li> 
             <Link to="/"> Home </Link>
-            <Link to="/person"> Person </Link>
-            <Link to="/new-person"> Add New Person </Link>          <Link onClick={props.logout}> Logout </Link>            
+            <Link to="/new-person"> Add New Person </Link>          
+            <Link to="/person"> Deleted Person List </Link>
+            <Link onClick={props.logout}> Logout </Link>            
 
           </li>
         </ul>
