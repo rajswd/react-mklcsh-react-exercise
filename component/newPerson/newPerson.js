@@ -1,27 +1,43 @@
-import React from 'react';
+import React, {Component}from 'react';
 import {connect} from 'react-redux';
 import * as CONST from '../../store/constant';
 
-const NewPersonComponent = (props)=>{
-  let counter = 10;
-  const addEmployee = ()=>{
-
-     let employee = {
-                  name: "RAJ_ " + counter,
-                  id: Date.now(),
-                  contact: Date.now(),
-                  emailId: "raj@raj.com" 
-                };    
-
-    props.addEmployee(employee);
-    counter +=10;
+class NewPersonComponent extends Component{
+   constructor(props) {
+    super(props);
+    this.state = { showMessage : false};
+    this.addEmployee = this.addEmployee.bind(this);
   }
+  counter = 10;
+  
+  addEmployee = ()=>{
+    this.setState({showMessage: true});
+      let employee = {
+                    name: "RAJ_ " + this.counter,
+                    id: Date.now(),
+                    contact: Date.now(),
+                    emailId: "raj@raj.com" 
+                  };    
 
+      props.addEmployee(employee);
+      this.counter +=10;
+      setTimeout(()=>{
+        this.setState({showMessage: false});}, 3000);    
+    }
+  render(){
   return (
-    <h1>
-      <button onClick={addEmployee}> ADD Employee</button>
-    </h1>
+    <div>
+      <h1>
+        <button onClick={this.addEmployee}> ADD Employee</button>
+      </h1>
+      <div className={this.state.showMessage == true  ? 'show-message': 'hide-message'}>
+        <div>
+          Employee Is added to List, Please navigate to Home Page to see the added Employee.
+        </div>
+      </div>
+    </div>
   );
+  }
 }
 
 const actionToAdd = (dispatch)=>{

@@ -12,8 +12,7 @@ const reducerAction = (state = initialState, action) => {
                       employeeList: state.employeeList.concat(action.employee)
                     });
     case CONST.DELETE_EMPLOYEE : 
-          console.log(action.id);
-          let index, _empList = [...state.employeeList];
+          let _empList = [...state.employeeList];
           _empList = _empList.filter(emp => emp.id !== action.id);
           return Object.assign({}, state, {employeeList : _empList});
     }  

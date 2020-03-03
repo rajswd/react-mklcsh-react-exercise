@@ -4,6 +4,9 @@ text-align: center;
 
 table{
   width:100%;
+  max-width: 31em;
+  display:flex;
+  flex-direction: column;
 }
 thead tr td{
   font-weight: bold;

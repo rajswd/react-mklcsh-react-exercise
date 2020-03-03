@@ -4,10 +4,12 @@ import {BrowserRouter} from 'react-router-dom';
  
 import RouterComponent from './component/navBar/navBar';
 import LoginComponent from './login/login';
-import {createStore } from 'redux';
+import {createStore, combineReducers } from 'redux';
 import {Provider} from 'react-redux';
 
 import reducerAction from './store/reducer/reducerAction';
+import logReducer from './store/reducer/reducerLog';
+
 
 import './style.css';
 
@@ -42,10 +44,11 @@ class App extends Component {
     );
   }
 }
-const initialState = {
-  employeeList: []
-};
-const store1 = createStore(reducerAction);
+const rootReducers = combineReducers({
+  actionReducer : reducerAction,
+  logReducer    : logReducer
+})
+const store1 = createStore(rootReducers);
 // console.log("-------",store1.getState());
 
 render(<Provider store={store1}><App /></Provider>, document.getElementById('root'));

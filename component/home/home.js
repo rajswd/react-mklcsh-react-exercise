@@ -5,8 +5,14 @@ import * as CONST from '../../store/constant';
 import './home.css';
  
 const HomeComponent = (props)=>{
+
+  const deleteEmployee = (employee)=>{
+    props.deleteEmployee(employee.id);
+    props.logEmployee(employee);
+  };
+
   return (
-    <div>
+    <div className="center-box">
       <h1> Employee List </h1>
       
        <table >
@@ -25,7 +31,7 @@ const HomeComponent = (props)=>{
             <td >{el.name}</td> 
             <td  style={{width:'120px'}} >{el.contact}</td> 
             <td  style={{width:'120px'}}>{el.emailId}</td> 
-            <td  className="delete-row" style={{width:'30px'}} onClick={props.deleteEmployee.bind(null,el.id)} >Delete</td> 
+            <td  className="delete-row" style={{width:'30px'}} onClick={deleteEmployee.bind(null, el)} >Delete</td> 
           </tr>
         ))}
         </tbody>
@@ -35,13 +41,13 @@ const HomeComponent = (props)=>{
 }
 
 const mapStateToProps = state => {
-  return { employeeList: state.employeeList };
+  return { employeeList: state.actionReducer.employeeList };
 };
 
 const  mapDispatchToProps = (dispatch)  =>  {
   return {
-    addEmployee: () => dispatch({type: CONST.ADD_EMPLOYEE}),
-    deleteEmployee: (id) => dispatch({type:CONST.DELETE_EMPLOYEE, id: id}) 
+    deleteEmployee: (id) => dispatch({type:CONST.DELETE_EMPLOYEE, id: id}),
+    logEmployee : (employee) => dispatch({type:CONST.LOG_EMPLOYEE, employee:employee}) 
   };
 }
 
