@@ -1,7 +1,8 @@
 import * as CONST from '../constant';
 
 const initialState = {
-  employeeList: []
+  employeeList: [],
+  user : null
 };
 
 const reducerAction = (state = initialState, action) => {
@@ -15,6 +16,15 @@ const reducerAction = (state = initialState, action) => {
           let _empList = [...state.employeeList];
           _empList = _empList.filter(emp => emp.id !== action.id);
           return Object.assign({}, state, {employeeList : _empList});
+
+    case CONST.USER_INFO : 
+        return Object.assign({}, state , {user: action.user});
+
+    case CONST.CLEAR_STORE : 
+        return Object.assign({}, state , {
+            user: null,
+            employeeList : []}
+        );
     }  
   
   return state;
