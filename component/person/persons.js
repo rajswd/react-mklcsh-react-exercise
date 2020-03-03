@@ -4,7 +4,9 @@ import {connect} from 'react-redux';
 const PersonsComponent = (props)=>{
   return (<div  className="center-box">
     <h1> Deleted Employee List </h1>
-  
+    {
+        props.deletedEmployeeList.length > 0
+        ?
      <table >
         <thead>
           <tr> 
@@ -24,7 +26,8 @@ const PersonsComponent = (props)=>{
         ))}
         </tbody>
       </table>
-  
+      : <div class = "Show message"> Sorry !! There is no any Deleted Emplyee list available. </div> 
+    }
   </div>);
 }
 

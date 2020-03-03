@@ -16,8 +16,8 @@ const RouterComponent = (props) =>{
         <ul>
           <li> 
             <Link to="/"> Home </Link>
-            <Link to="/new-person"> Add New Person </Link>          
-            <Link to="/person"> Deleted Person List </Link>
+            <Link to="/addEmployee"> Add Employee </Link>          
+            <Link to="/deletedEmployeeList"> Deleted Employee List </Link>
             <Link onClick={props.logout}> Logout </Link>            
 
           </li>
@@ -25,8 +25,8 @@ const RouterComponent = (props) =>{
       </nav>
       <Switch>
         <Route path="/" exact component={HomeComponent} />
-        <Route path="/person" exact  component={PersonsComponent} />
-        <Route path="/new-person" exact  component={NewPersonComponent} />
+        <Route path="/deletedEmployeeList" exact  component={PersonsComponent} />
+        <Route path="/addEmployee" exact  component={NewPersonComponent} />
         
         <Route path="/person/:id" component={PersonComponent} /> 
       </Switch>

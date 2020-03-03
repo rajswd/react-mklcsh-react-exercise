@@ -14,7 +14,9 @@ const HomeComponent = (props)=>{
   return (
     <div className="center-box">
       <h1> Employee List </h1>
-      
+      {
+        props.employeeList.length > 0
+        ?
        <table >
         <thead>
           <tr> 
@@ -36,6 +38,8 @@ const HomeComponent = (props)=>{
         ))}
         </tbody>
       </table>
+      : <div class = "Show message"> Sorry !! There is no any Emplyee available. </div>
+      }
     </div>
     );
 }
