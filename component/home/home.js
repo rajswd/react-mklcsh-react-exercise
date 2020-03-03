@@ -38,7 +38,7 @@ const HomeComponent = (props)=>{
         ))}
         </tbody>
       </table>
-      : <div class = "Show message"> Sorry !! There is no any Emplyee available. </div>
+      : <div className = "Show message"> Sorry !! There is no any Emplyee available. </div>
       }
     </div>
     );

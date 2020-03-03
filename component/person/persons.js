@@ -26,7 +26,7 @@ const PersonsComponent = (props)=>{
         ))}
         </tbody>
       </table>
-      : <div class = "Show message"> Sorry !! There is no any Deleted Emplyee list available. </div> 
+      : <div className = "Show message"> Sorry !! There is no any Deleted Emplyee list available. </div> 
     }
   </div>);
 }

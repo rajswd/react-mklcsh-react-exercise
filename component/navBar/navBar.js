@@ -3,7 +3,6 @@ import {Route, Link, Switch} from 'react-router-dom';
 import './navBar.css';
 
 import HomeComponent from '../../component/home/home';
-import PersonComponent from '../../component/person/person/person';
 import PersonsComponent from '../../component/person/persons';
 import NewPersonComponent from '../../component/newPerson/newPerson';
 
@@ -28,7 +27,6 @@ const RouterComponent = (props) =>{
         <Route path="/deletedEmployeeList" exact  component={PersonsComponent} />
         <Route path="/addEmployee" exact  component={NewPersonComponent} />
         
-        <Route path="/person/:id" component={PersonComponent} /> 
       </Switch>
     </div>
   );
