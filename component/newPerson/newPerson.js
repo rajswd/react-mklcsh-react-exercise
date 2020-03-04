@@ -22,7 +22,7 @@ class NewPersonComponent extends Component{
       props.addEmployee(employee);
       this.counter +=10;
       setTimeout(()=>{
-        this.setState({showMessage: false});}, 2000);    
+        this.setState({showMessage: false});}, Math.floor(Math.random() * 2000));    
     }
   render(){
   return (
