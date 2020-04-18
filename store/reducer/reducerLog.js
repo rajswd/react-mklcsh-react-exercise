@@ -13,6 +13,7 @@ const logReducer = (state = initilaState, action)=>{
                   deletedEmployeeList : state.deletedEmployeeList.concat(action.employee)
                 });
     case CONST.CLEAR_STORE :
+        console.log("----------clear-----");
           return Object.assign({}, state, {deletedEmployeeList : []})
   }
 

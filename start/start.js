@@ -15,7 +15,7 @@ class StartApp extends Component {
     this.login = this.login.bind(this);
   }
   logout (){
-    this.props.clearActionStore();
+    this.props.clearLog();
   }
 
   login(name, password){
@@ -51,7 +51,7 @@ const addUserToStore = (dispatch) =>{
   return {
     addUser : (userInfo) => dispatch({type : CONSTANT.USER_INFO, user : userInfo}),
     clearActionStore: ()=>dispatch({type : CONSTANT.CLEAR_STORE}),
-    clearLog: ()=>dispatch({type : CONSTATN.CLEAR_STORE})
+    clearLog: ()=>dispatch({type : CONSTANT.CLEAR_STORE})
   }
 }
 

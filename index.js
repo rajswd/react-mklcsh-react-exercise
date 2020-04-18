@@ -25,8 +25,8 @@ class App extends Component {
   }
 }
 const rootReducers = combineReducers({
-  actionReducer : reducerAction,
-  logReducer    : logReducer
+  logReducer    : logReducer,
+  actionReducer : reducerAction
 })
 const store1 = createStore(rootReducers);
 // console.log("-------",store1.getState());

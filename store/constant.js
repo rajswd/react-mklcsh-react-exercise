@@ -5,4 +5,5 @@ export const CLEAR_STORE = "CLEAR_STORE";
 export const DELETE_EMPLOYEE = "DELETE_EMPLOYEE";
 
 //LOG
+export const CLEAR_LOG_STORE = "CLEAR_LOG_STORE";
 export const LOG_EMPLOYEE = "LOG_EMPLOYEE";

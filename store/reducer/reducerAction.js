@@ -2,7 +2,7 @@ import * as CONST from '../constant';
 
 const initialState = {
   employeeList: [],
-  user : null
+  user : {}
 };
 
 const reducerAction = (state = initialState, action) => {
@@ -13,14 +13,15 @@ const reducerAction = (state = initialState, action) => {
                       employeeList: state.employeeList.concat(action.employee)
                     });
     case CONST.DELETE_EMPLOYEE : 
-          let _empList = [...state.employeeList];
-          _empList = _empList.filter(emp => emp.id !== action.id);
-          return Object.assign({}, state, {employeeList : _empList});
+          let employeeList = [...state.employeeList];
+          employeeList = employeeList.filter(emp => emp.id !== action.id);
+          return Object.assign({}, state, {employeeList});
 
     case CONST.USER_INFO : 
         return Object.assign({}, state , {user: action.user});
 
     case CONST.CLEAR_STORE : 
+    console.log("----------clear---2--");
         return Object.assign({}, state , {
             user: null,
             employeeList : []}
